@@ -31,7 +31,7 @@
     <section class="section-header">
       <span class="section-tag">Curated</span>
       <h1>Ресурсы для релокантов</h1>
-      <p class="lead">Telegram-каналы и сайты, собранные из экспат-сообществ. Основной источник актуальной информации о переезде.</p>
+      <p class="lead">Telegram-каналы и официальные сайты. Указаны только проверенные ресурсы с подтверждённой репутацией.</p>
     </section>
 
     <div class="filter-chips" id="resourceChips">
@@ -70,8 +70,8 @@
         const list = document.getElementById('telegramList');
         const filtered = activeCat === 'all' ? TELEGRAM_CHANNELS : TELEGRAM_CHANNELS.filter(c => c.category === activeCat);
         list.innerHTML = filtered.map(ch => `
-          <a class="resource-item" href="https://t.me/${ch.handle.replace('@', '')}" target="_blank" rel="noopener">
-            <span class="res-icon">📱</span>
+          <a class="resource-item" href="${ch.url || 'https://t.me/' + ch.handle.replace('@', '')}" target="_blank" rel="noopener">
+            <span class="res-icon">${ch.verified ? '✅' : '📱'}</span>
             <div class="res-info">
               <div class="res-name">${ch.name}</div>
               <div class="res-desc">${ch.desc}</div>

@@ -1,4 +1,9 @@
-/* Relocation Guide — база стран для переезда из России */
+/* Relocation Guide — база стран для переезда из России
+   verifiedAsOf: 2026-06-30
+   Источники: официальные иммиграционные порталы, Wikipedia Visa requirements,
+   t-j.ru, kovcheg.live, legal.ge. Перед поездкой проверяйте правила на сайтах властей. */
+const DATA_META = { verifiedAsOf: '2026-06-30', disclaimer: 'Информация из официальных и проверенных источников. Визовые правила меняются — сверяйтесь с сайтами властей перед поездкой.' };
+
 const COUNTRIES = [
   {
     id: "georgia",
@@ -18,13 +23,13 @@ const COUNTRIES = [
     nomadFriendly: true,
     euPath: false,
     ratings: { relocation: 9.2, benefits: 8.5, safety: 8.0, healthcare: 6.5, taxes: 9.0, nomad: 9.5, climate: 8.5, community: 9.0 },
-    pros: ["Безвиз до 1 года", "Низкая стоимость жизни", "Большое русскоязычное сообщество", "Простая регистрация ИП", "Красивые города и природа", "Безопасно"],
-    cons: ["Ограниченный рынок труда", "Слабая медицина в регионах", "Зимой сыро", "Риск политических изменений"],
-    pathways: ["Туризм 365 дней", "ИП / фриланс", "Открытие компании", "Покупка недвижимости"],
-    timeline: "1–4 недели",
-    channels: ["@georgia_relocation", "@tbilisi_life", "@digital_nomad_ge"],
-    sites: ["georgia.travel", "rs.ge"],
-    description: "Один из самых популярных направлений для релокантов из России. Простой въезд, низкие налоги для ИП, развитая инфраструктура в Тбилиси и Батуми."
+    pros: ["Безвиз до 1 года (официально)", "Территориальная налоговая система", "ИП 1% при Small Business Status", "Русскоязычное сообщество", "ИП на иностр. заказчиков — без разрешения на работу (2026)"],
+    cons: ["С 01.03.2026 — разрешение на работу для ИП с клиентами в Грузии", "Нет ДС с РФ (банки строже)", "Слабая медицина в регионах", "Дипотношения с РФ разорваны с 2008"],
+    pathways: ["Безвиз 365 дней", "ИП (удалёнка на зарубеж)", "Разрешение на трудовую деятельность + ВНЖ", "Покупка недвижимости"],
+    timeline: "1–4 недели (въезд); 1–2 мес. (разрешение на работу)",
+    sites: ["rs.ge", "labourmigration.moh.gov.ge", "georgia.travel"],
+    sources: ["https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens", "https://legal.ge/ru/news/rabota-v-gruzii-bez-razresheniya-teper-nezakonna-chto-dolzhny-delat-inostrantsy-ru", "https://wiki.private.law/en/relocation-from-russia"],
+    description: "Безвиз до 1 года для граждан РФ. С 1 марта 2026 года для оплачиваемой работы и ИП с грузинскими клиентами нужно разрешение на трудовую деятельность. ИП, работающие только на иностранных заказчиков удалённо, по поправкам апреля 2026 — освобождены от разрешения."
   },
   {
     id: "armenia",
@@ -48,9 +53,9 @@ const COUNTRIES = [
     cons: ["Закрытые границы с Турцией/Азербайджаном", "Землетрясения", "Ограниченный выбор товаров", "Сложности с выездом в ЕС"],
     pathways: ["Туризм", "ИП / самозанятость", "Трудовой договор", "Резидентство через бизнес"],
     timeline: "1–3 недели",
-    channels: ["@armenia_relocation", "@erevan_life", "@it_armenia"],
-    sites: ["migration.am", "e-register.am"],
-    description: "Ереван — столица русскоязычной релокации. Сильное IT-сообщество, доступная медицина, простая бюрократия для фрилансеров."
+    sites: ["migration.am", "e-register.am", "mfa.am"],
+    sources: ["https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens", "https://armenian-lawyer.com/immigration/armenia-visa-requirements-nationality/", "https://wiki.private.law/en/relocation-from-russia"],
+    description: "Безвиз 180 дней в год для граждан РФ. Член ЕАЭС — упрощённый режим для граждан России. Ереван — крупный IT-хаб с русскоязычным сообществом. Подоходный налог 20%, микропредприятия — от 0% при соблюдении условий."
   },
   {
     id: "serbia",
@@ -74,9 +79,9 @@ const COUNTRIES = [
     cons: ["Визовый режим 30 дней — нужен ВНЖ", "Бюрократия", "Зимой серо", "Не в ЕС"],
     pathways: ["ВНЖ через ИП", "Трудоустройство", "Учёба", "Покупка недвижимости"],
     timeline: "2–6 месяцев",
-    channels: ["@serbia_relocation", "@belgrade_expats", "@balkan_life"],
-    sites: ["euprava.gov.rs", "serbia.travel"],
-    description: "Балканский хаб для тех, кто хочет жить в Европе. ВНЖ через предпринимательство — один из самых доступных путей на континент."
+    sites: ["euprava.gov.rs", "serbia.travel", "mfa.gov.rs"],
+    sources: ["https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens", "https://thevisaindex.com/passport/russia"],
+    description: "Безвиз 30 дней для граждан РФ (двустороннее соглашение). Для длительного пребывания — ВНЖ через ИП, трудоустройство или учёбу. Белград — главный хаб русскоязычных релокантов в Европе без Шенгена."
   },
   {
     id: "montenegro",
@@ -100,7 +105,6 @@ const COUNTRIES = [
     cons: ["Маленькая страна", "Сезонность", "Дорогая недвижимость у моря", "Слабая медицина"],
     pathways: ["ВНЖ через компанию", "Покупка жилья", "Туризм + продление"],
     timeline: "2–4 месяца",
-    channels: ["@montenegro_life", "@balkan_relocation"],
     sites: ["montenegro.travel", "gov.me"],
     description: "Компактная страна с выходом к морю. Популярна для спокойной жизни и как трамплин для будущего в ЕС."
   },
@@ -126,7 +130,6 @@ const COUNTRIES = [
     cons: ["Инфляция лиры", "Языковой барьер", "Бюрократия", "Землетрясения", "Политическая нестабильность"],
     pathways: ["ВНЖ через недвижимость ($200k+)", "ИКамет", "Трудоустройство", "Студенческая виза"],
     timeline: "1–3 месяца",
-    channels: ["@turkey_relocation", "@antalya_expats", "@istanbul_life"],
     sites: ["evisa.gov.tr", "goc.gov.tr"],
     description: "Море, мегаполисы и доступный ВНЖ через недвижимость. Стамбул и Анталья — главные точки притяжения."
   },
@@ -152,7 +155,6 @@ const COUNTRIES = [
     cons: ["Очень дорого", "Жара круглый год", "Нет гражданства", "Зависимость от работодателя", "Культурные ограничения"],
     pathways: ["Remote Work Visa", "Freelance Permit", "Трудоустройство", "Golden Visa"],
     timeline: "2–8 недель",
-    channels: ["@dubai_relocation", "@uae_expats", "@dubai_nomad"],
     sites: ["u.ae", "icp.gov.ae"],
     description: "Налоговый рай и мегаполис будущего. Идеально для высокооплачиваемых специалистов и предпринимателей."
   },
@@ -178,7 +180,6 @@ const COUNTRIES = [
     cons: ["Климат", "Бюрократия", "Ограниченный выбор для IT", "Удалённость от Европы"],
     pathways: ["РВП / ПМЖ", "Трудоустройство", "Бизнес", "Учёба"],
     timeline: "1–2 месяца",
-    channels: ["@kazakhstan_relocation", "@almaty_life"],
     sites: ["egov.kz", "migration.gov.kz"],
     description: "Ближайший сосед с русским языком. Алматы — современный город с растущими возможностями."
   },
@@ -204,7 +205,6 @@ const COUNTRIES = [
     cons: ["Слабая инфраструктура", "Мало возможностей", "Зимние отключения", "Слабая медицина"],
     pathways: ["Туризм", "ИП", "Трудоустройство"],
     timeline: "1–2 недели",
-    channels: ["@bishkek_life", "@kyrgyzstan_expats"],
     sites: ["gov.kg"],
     description: "Бюджетный вариант для старта. Подходит как временная база или для минималистичного образа жизни."
   },
@@ -226,13 +226,13 @@ const COUNTRIES = [
     nomadFriendly: true,
     euPath: true,
     ratings: { relocation: 8.5, benefits: 9.0, safety: 9.0, healthcare: 8.5, taxes: 8.0, nomad: 9.0, climate: 9.5, community: 8.0 },
-    pros: ["D7 и Digital Nomad визы", "Мягкий климат", "ЕС и Шенген", "NHR налоговый режим", "Безопасность", "Качество жизни"],
-    cons: ["Долгий сбор документов", "Очереди в консульствах", "Растущие цены", "Нужен доход от €870/мес"],
+    pros: ["D7 и Digital Nomad визы", "Мягкий климат", "ЕС и Шенген", "Безопасность", "Качество жизни"],
+    cons: ["Шенгенская виза обязательна для граждан РФ", "Долгий сбор документов", "Очереди в консульствах", "NHR закрыт; новый режим IFICI — узкий"],
     pathways: ["D7 (пассивный доход)", "Digital Nomad Visa", "D2 (бизнес)", "Golden Visa"],
     timeline: "3–8 месяцев",
-    channels: ["@portugal_relocation", "@lisbon_expats", "@d7_visa_portugal"],
-    sites: ["vistos.mne.gov.pt", "portugal.gov.pt"],
-    description: "Золотой стандарт европейской релокации. D7-виза для фрилансеров с пассивным доходом — один из лучших путей в ЕС."
+    sites: ["vistos.mne.gov.pt", "portugal.gov.pt", "sef.pt"],
+    sources: ["https://vistos.mne.gov.pt", "https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens"],
+    description: "Для граждан РФ нужна национальная виза (Шенген). D7 — для подтверждённого пассивного дохода. Программа NHR для новых резидентов закрыта; действует IFICI для научных/инновационных профилей."
   },
   {
     id: "spain",
@@ -256,7 +256,6 @@ const COUNTRIES = [
     cons: ["Бюрократия", "Безработица", "Нужен доход €2,300+/мес", "Долгое оформление"],
     pathways: ["Digital Nomad Visa", "Autónomo", "Трудоустройство", "Студенческая"],
     timeline: "3–9 месяцев",
-    channels: ["@spain_relocation", "@barcelona_expats", "@madrid_nomad"],
     sites: ["exteriores.gob.es", "spain.info"],
     description: "Digital Nomad Visa сделала Испанию топ-направлением. Барселона, Валенсия, Мадрид — магниты для удалёнщиков."
   },
@@ -282,7 +281,6 @@ const COUNTRIES = [
     cons: ["Высокие налоги", "Немецкий обязателен", "Сложная бюрократия", "Дорогая аренда", "Погода"],
     pathways: ["Blue Card EU", "Chancenkarte", "Учёба", "Freelance Visa"],
     timeline: "4–12 месяцев",
-    channels: ["@germany_relocation", "@berlin_expats"],
     sites: ["make-it-in-germany.com", "auswaertiges-amt.de"],
     description: "Для профессионалов с востребованной специальностью. Blue Card — прямой путь к ВНЖ и гражданству."
   },
@@ -308,7 +306,6 @@ const COUNTRIES = [
     cons: ["Польский язык", "Консервативная политика", "Холодные зимы", "Очереди на визы"],
     pathways: ["Рабочая виза", "Blue Card", "Бизнес", "Учёба"],
     timeline: "3–8 месяцев",
-    channels: ["@poland_relocation", "@warsaw_expats"],
     sites: ["gov.pl", "udsc.gov.pl"],
     description: "Восточные ворота ЕС. Варшава и Краков активно нанимают IT-специалистов."
   },
@@ -334,7 +331,6 @@ const COUNTRIES = [
     cons: ["Чешский язык", "Дорогая Прага", "Бюрократия", "Сложности с жильём"],
     pathways: ["Employee Card", "Živnostenský list", "Blue Card", "Учёба"],
     timeline: "3–7 месяцев",
-    channels: ["@czech_relocation", "@prague_expats"],
     sites: ["mzv.cz", "czechpoint.cz"],
     description: "Прага — одна из самых красивых столиц Европы с сильным IT-сектором и центральным расположением."
   },
@@ -360,7 +356,6 @@ const COUNTRIES = [
     cons: ["Холодно", "Маленькое сообщество", "Эстонский язык", "Дороговато"],
     pathways: ["Digital Nomad Visa", "e-Residency + компания", "Startup Visa", "Трудоустройство"],
     timeline: "2–5 месяцев",
-    channels: ["@estonia_digital", "@tallinn_expats"],
     sites: ["e-resident.gov.ee", "workinestonia.com"],
     description: "Самое цифровое государство мира. e-Residency позволяет вести EU-бизнес удалённо из любой точки."
   },
@@ -386,7 +381,6 @@ const COUNTRIES = [
     cons: ["Холодно", "Маленький рынок", "Латышский для гражданства", "Уезжают молодые"],
     pathways: ["ВНЖ через работу", "Бизнес", "Учёба", "Воссоединение семьи"],
     timeline: "2–5 месяцев",
-    channels: ["@riga_expats", "@latvia_relocation"],
     sites: ["mfa.gov.lv", "pmlp.gov.lv"],
     description: "Балтийская альтернатива с русскоязычным наследием. Рига — уютный европейский город у моря."
   },
@@ -396,8 +390,8 @@ const COUNTRIES = [
     flag: "🇹🇭",
     region: "Юго-Восточная Азия",
     continent: "asia",
-    visa: "TR / LTR / Tourist",
-    visaType: "evisa",
+    visa: "Безвиз 60 дней + TDAC",
+    visaType: "visa-free",
     difficulty: 4,
     costIndex: 35,
     budget: 1500,
@@ -407,14 +401,14 @@ const COUNTRIES = [
     taxRegime: "territorial",
     nomadFriendly: true,
     euPath: false,
-    ratings: { relocation: 8.5, benefits: 8.0, safety: 7.5, healthcare: 8.5, taxes: 8.5, nomad: 9.5, climate: 8.0, community: 9.0 },
-    pros: ["LTR Visa 10 лет", "Низкие цены", "Экспат-сообщество", "Медицина", "Кухня", "Пляжи"],
-    cons: ["Жара и влажность", "Языковой барьер", "Визовые изменения", "Пробки в Бангкоке"],
-    pathways: ["LTR Visa", "ED Visa", "Elite Visa", "Турист + бордеран"],
-    timeline: "1–3 месяца",
-    channels: ["@thailand_relocation", "@bangkok_nomad", "@phuket_life"],
-    sites: ["thaievisa.go.th", "ltr.go.th"],
-    description: "Рай для цифровых кочевников. LTR Visa — долгосрочная виза для профессионалов с доходом $80k+/год."
+    ratings: { relocation: 8.5, benefits: 8.0, safety: 7.5, healthcare: 8.5, taxes: 8.5, nomad: 9.0, climate: 8.0, community: 9.0 },
+    pros: ["Безвиз 60 дней (с июля 2024)", "Продление до 90 дней в Immigration", "DTV для удалёнщиков (5 лет)", "Низкие цены", "Сильная медицина", "TDAC — онлайн-карта прибытия"],
+    cons: ["Возможное сокращение безвиза до 30 дней (2026, дата TBD)", "LTR — только для высокого дохода ($80k+)", "Жара и влажность", "Работа по туристическому штампу запрещена"],
+    pathways: ["Безвиз 60 дней (+30 продление)", "DTV (Destination Thailand Visa)", "LTR (доход $80k+/год)", "TR Tourist Visa", "ED Visa (учёба)"],
+    timeline: "Въезд сразу; DTV — 2–4 недели",
+    sites: ["thaievisa.go.th", "tdac.immigration.go.th", "ltr.go.th"],
+    sources: ["https://lenta.ru/articles/2026/06/22/pravila-vezda-v-tailand/", "https://g-mira.ru/napravleniya/thailand/", "https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens"],
+    description: "Безвиз 60 дней с обязательной TDAC (Thailand Digital Arrival Card). В мае 2026 одобрено сокращение до 30 дней — вступит в силу через 15 дней после публикации в Royal Gazette (дата пока не объявлена). DTV — виза для удалёнщиков на 5 лет. LTR — для состоятельных резидентов с подтверждённым высоким доходом."
   },
   {
     id: "bali",
@@ -438,7 +432,6 @@ const COUNTRIES = [
     cons: ["Инфраструктура", "Сезон дождей", "Далеко от всего", "Медицина средняя"],
     pathways: ["Second Home Visa", "B211A", "KITAS через работу", "VOA"],
     timeline: "2–6 недель",
-    channels: ["@bali_expats", "@bali_nomad", "@canggu_life"],
     sites: ["imigrasi.go.id", "bali.com"],
     description: "Самое популярное место для digital nomads в мире. Убуд, Чангу, Денпасар — русскоязычные деревни."
   },
@@ -462,9 +455,8 @@ const COUNTRIES = [
     ratings: { relocation: 7.5, benefits: 7.0, safety: 6.0, healthcare: 7.0, taxes: 6.0, nomad: 8.0, climate: 8.5, community: 7.5 },
     pros: ["Очень дёшево (курс)", "Культура", "Стейк и вино", "Rentista Visa", "Разнообразие климатов"],
     cons: ["Инфляция", "Безопасность", "Испанский обязателен", "Экономическая нестабильность"],
-    pathways: ["Rentista Visa", "Туризм + Mercosur", "Digital Nomad", "Паспорт за 2 года"],
+    pathways: ["Rentista Visa", "Туризм 90 дней", "Рабочая виза", "Натурализация от 2 лет проживания"],
     timeline: "2–6 месяцев",
-    channels: ["@argentina_relocation", "@buenos_aires_expats"],
     sites: ["argentina.gob.ar", "migraciones.gob.ar"],
     description: "Экзотика по доступной цене. Буэнос-Айрес — европейский город в Южной Америке."
   },
@@ -490,7 +482,6 @@ const COUNTRIES = [
     cons: ["Безопасность (регионы)", "Испанский", "Пробки", "Жара"],
     pathways: ["Temporary Resident", "Digital Nomad", "Туризм", "Работа"],
     timeline: "1–4 месяца",
-    channels: ["@mexico_relocation", "@cdmx_nomad", "@playa_del_carmen"],
     sites: ["gob.mx", "inm.gob.mx"],
     description: "Мехико, Плайя-дель-Кармен, Мерида — топ для удалёнщиков с доходом в USD."
   },
@@ -516,7 +507,6 @@ const COUNTRIES = [
     cons: ["Долгий процесс", "Холод", "Высокие налоги", "Дорого", "Конкуренция"],
     pathways: ["Express Entry", "Provincial Nominee", "Study Permit", "Start-up Visa"],
     timeline: "12–24 месяца",
-    channels: ["@canada_immigration", "@toronto_expats"],
     sites: ["canada.ca", "cic.gc.ca"],
     description: "Для тех, кто мечтает о полноценной иммиграции. Express Entry — система баллов для профессионалов."
   },
@@ -542,7 +532,6 @@ const COUNTRIES = [
     cons: ["Разделённый остров", "Дорогая Лимассол", "Летняя жара", "Ограниченный рынок"],
     pathways: ["Digital Nomad Visa", "Покупка недвижимости", "Компания", "Трудоустройство"],
     timeline: "2–4 месяца",
-    channels: ["@cyprus_relocation", "@limassol_expats"],
     sites: ["moi.gov.cy", "cyprus.gov.cy"],
     description: "Средиземноморский остров с английским языком и выгодным налоговым режимом для резидентов."
   },
@@ -568,7 +557,6 @@ const COUNTRIES = [
     cons: ["Дорого", "Маленький остров", "Пробки", "Ограниченная природа"],
     pathways: ["Nomad Residence Permit", "Global Residence", "Трудоустройство", "Стартап"],
     timeline: "2–5 месяцев",
-    channels: ["@malta_relocation", "@malta_nomad"],
     sites: ["residencymalta.gov.mt", "gov.mt"],
     description: "Англоязычная Европа в миниатюре. Популярна среди IT и iGaming специалистов."
   },
@@ -594,7 +582,6 @@ const COUNTRIES = [
     cons: ["Геополитика", "Дорого", "Иврит", "Призыв", "Стресс"],
     pathways: ["Алия (репатриация)", "Рабочая виза", "Expert Visa", "Учёба"],
     timeline: "3–12 месяцев",
-    channels: ["@israel_relocation", "@tel_aviv_expats"],
     sites: ["gov.il", "nefesh.org"],
     description: "Для тех, кто имеет право на репатриацию. Тель-Авив — стартап-столица Ближнего Востока."
   },
@@ -620,7 +607,6 @@ const COUNTRIES = [
     cons: ["Холод и темнота", "Финский язык", "Высокие налоги", "Сложно найти работу"],
     pathways: ["Рабочий ВНЖ", "Учёба", "Стартап", "Воссоединение"],
     timeline: "4–10 месяцев",
-    channels: ["@finland_relocation", "@helsinki_expats"],
     sites: ["migri.fi", "workinfinland.com"],
     description: "Скандинавское качество жизни. Для профессионалов с оффером от финского работодателя."
   },
@@ -646,51 +632,53 @@ const COUNTRIES = [
     cons: ["Слабая инфраструктура", "Жара летом", "Бюрократия", "Мало экспатов"],
     pathways: ["Туризм", "ИП", "Трудоустройство", "Бизнес"],
     timeline: "1–3 недели",
-    channels: ["@tashkent_life", "@uzbekistan_expats"],
-    sites: ["gov.uz", "evisa.mfa.uz"],
     description: "Бюджетная база в Центральной Азии. Ташкент активно модернизируется."
-  }
-];
+  },
+  {
+    id: "vietnam",
+    name: "Вьетнам",
+    flag: "🇻🇳",
+    region: "Юго-Восточная Азия",
+    continent: "asia",
+    visa: "Безвиз 45 дней",
+    visaType: "visa-free",
+    difficulty: 3,
+    costIndex: 28,
+    budget: 1100,
+    language: "Вьетнамский",
+    languageLevel: "medium",
+    climate: "hot",
+    taxRegime: "territorial",
+    nomadFriendly: true,
+    euPath: false,
+    ratings: { relocation: 8.5, benefits: 7.5, safety: 7.5, healthcare: 7.0, taxes: 8.0, nomad: 8.0, climate: 8.5, community: 8.5 },
+    pros: ["Безвиз 45 дней (до 14.03.2028)", "e-Visa до 90 дней за $25", "Низкая стоимость жизни", "Дананг, Нячанг, Хошимин", "Развитая кофейная культура", "Хорошая уличная еда"],
+    cons: ["Нет официальной nomad-визы", "ВНЖ (TRC) — только через work permit/бизнес", "Оплата e-Visa не российской картой", "Жара и влажность", "PAI в ряде аэропортов (2026)", "Долгое пребывание через визаран — риски"],
+    pathways: ["Безвиз 45 дней", "e-Visa 90 дней ($25/$50)", "Business visa", "Work Permit + TRC", "Визаран (неофициально)"],
+    timeline: "1–7 дней (e-Visa)",
+    sites: ["evisa.immigration.gov.vn", "mofa.gov.vn", "vietnamimmigration.gov.vn"],
+    sources: ["https://t-j.ru/news/vietnam-entry-rules/", "https://evisa.immigration.gov.vn", "https://www.aviasales.ru/psgr/article/vietnam-entry", "НП СРВ №44/NQ-CP (безвиз до 14.03.2028)"],
+    description: "Безвиз 45 дней для граждан РФ — продлено до 14 марта 2028 года (постановление №44/NQ-CP). Дольше 45 дней — e-Visa на evisa.immigration.gov.vn ($25 однократная, $50 мультивиза, до 90 дней). Отдельной визы для digital nomads нет. ВНЖ (Temporary Residence Card) — через work permit, инвестиции или брак."
 
 const TELEGRAM_CHANNELS = [
-  { name: "Релокация — главный", handle: "@relocation_ru", desc: "Новости, гайды, обсуждения переезда", category: "general" },
-  { name: "Грузия для жизни", handle: "@georgia_relocation", desc: "ВНЖ, аренда, налоги в Грузии", category: "country" },
-  { name: "Армения — переезд", handle: "@armenia_relocation", desc: "Ереван, банки, ИП, жильё", category: "country" },
-  { name: "Сербия экспаты", handle: "@serbia_relocation", desc: "Белград, ВНЖ, балканская жизнь", category: "country" },
-  { name: "Португалия D7", handle: "@d7_visa_portugal", desc: "D7, NHR, Лиссабон", category: "country" },
-  { name: "Испания Digital Nomad", handle: "@spain_relocation", desc: "ВНЖ номада, autónomo, города", category: "country" },
-  { name: "Таиланд LTR", handle: "@thailand_relocation", desc: "Визы, Бангкок, Пхукет", category: "country" },
-  { name: "Бали номады", handle: "@bali_nomad", desc: "Визы, жильё, коворкинги", category: "country" },
-  { name: "Digital Nomads RU", handle: "@digital_nomad_ru", desc: "Удалёнка и страны мира", category: "nomad" },
-  { name: "Налоги экспата", handle: "@expat_taxes", desc: "Налоговое планирование", category: "legal" },
-  { name: "Визы и документы", handle: "@visa_documents", desc: "Сбор документов, апостили", category: "legal" },
-  { name: "IT релокация", handle: "@it_relocation", desc: "Работа за рубежом для IT", category: "career" },
-  { name: "Фриланс за границей", handle: "@freelance_abroad", desc: "ИП, самозанятость, счета", category: "career" },
-  { name: "ОАЭ Дубай", handle: "@dubai_relocation", desc: "ВНЖ, бизнес, жизнь в Эмиратах", category: "country" },
-  { name: "Балканы", handle: "@balkan_relocation", desc: "Сербия, Черногория, Албания", category: "region" },
-  { name: "Европа ВНЖ", handle: "@europe_residence", desc: "Визы ЕС, Шенген, ВНЖ", category: "region" },
-  { name: "Латинская Америка", handle: "@latam_relocation", desc: "Аргентина, Мексика, Колумбия", category: "region" },
-  { name: "Психология переезда", handle: "@relocation_psychology", desc: "Страхи, адаптация, поддержка", category: "mental" },
-  { name: "Семья и дети", handle: "@family_relocation", desc: "Школы, сады, переезд с детьми", category: "family" },
-  { name: "Бюджет релокации", handle: "@relocation_budget", desc: "Расходы, экономия, калькуляторы", category: "finance" }
+  { name: "Ковчег / The Ark", handle: "@ArkHelps", url: "https://t.me/ArkHelps", desc: "Крупнейшее сообщество поддержки релокантов: гайды, чаты по 46 странам, юр. помощь", category: "general", verified: true },
+  { name: "База знаний Ковчега", handle: "kovcheg.live", url: "https://kovcheg.live/", desc: "Проверенные гайды по переезду, тир-листы стран, адаптация", category: "general", verified: true },
+  { name: "Чаты Ковчега по странам", handle: "kovcheg.live", url: "https://kovcheg.live/", desc: "Telegram-чаты эмигрантов в 46 странах — жильё, работа, быт", category: "community", verified: true },
+  { name: "Идите лесом", handle: "@iditelesom", url: "https://t.me/iditelesom", desc: "Юридическая помощь при призыве (смежная тема для переезда)", category: "legal", verified: true }
 ];
 
 const WEB_RESOURCES = [
-  { name: "Telegram", url: "https://t.me", desc: "Основной источник актуальной информации от релокантов", category: "community" },
+  { name: "Wikipedia: визы для граждан РФ", url: "https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens", desc: "Актуальный список безвизовых стран и сроков (Henley Index)", category: "visa" },
+  { name: "Вьетнам e-Visa (официально)", url: "https://evisa.immigration.gov.vn", desc: "Официальный портал электронных виз Вьетнама", category: "visa" },
+  { name: "Таиланд TDAC", url: "https://tdac.immigration.go.th", desc: "Обязательная цифровая карта прибытия в Таиланд", category: "visa" },
+  { name: "Таиланд e-Visa", url: "https://thaievisa.go.th", desc: "Официальный портал виз Таиланда", category: "visa" },
+  { name: "Грузия: трудовая миграция", url: "https://labourmigration.moh.gov.ge", desc: "Разрешения на работу для иностранцев (с 2026)", category: "visa" },
+  { name: "Португалия: визы", url: "https://vistos.mne.gov.pt", desc: "Официальный портал виз Португалии", category: "visa" },
   { name: "Numbeo", url: "https://www.numbeo.com", desc: "Сравнение стоимости жизни по городам", category: "finance" },
-  { name: "VisaHQ", url: "https://www.visahq.com", desc: "Требования к визам по паспортам", category: "visa" },
-  { name: "Immigration Portal", url: "https://www.immi.gov.au", desc: "Официальные иммиграционные порталы", category: "visa" },
-  { name: "Remote OK", url: "https://remoteok.com", desc: "Удалённая работа для номадов", category: "career" },
   { name: "Nomad List", url: "https://nomadlist.com", desc: "Рейтинг городов для цифровых кочевников", category: "nomad" },
   { name: "InterNations", url: "https://www.internations.org", desc: "Сообщества экспатов в городах", category: "community" },
-  { name: "Expat.com", url: "https://www.expat.com", desc: "Форумы и гайды для экспатов", category: "community" },
-  { name: "Housing Anywhere", url: "https://housinganywhere.com", desc: "Аренда жилья за рубежом", category: "housing" },
-  { name: "Wise", url: "https://wise.com", desc: "Международные переводы и мультивалютный счёт", category: "finance" },
-  { name: "Revolut", url: "https://www.revolut.com", desc: "Банковские карты для путешествий", category: "finance" },
-  { name: "Skyscanner", url: "https://www.skyscanner.ru", desc: "Поиск дешёвых авиабилетов", category: "travel" },
-  { name: "Rome2Rio", url: "https://www.rome2rio.com", desc: "Маршруты между городами", category: "travel" },
-  { name: "Glassdoor", url: "https://www.glassdoor.com", desc: "Зарплаты и отзывы о работодателях", category: "career" },
-  { name: "LinkedIn", url: "https://www.linkedin.com", desc: "Поиск работы за рубежом", category: "career" }
+  { name: "Wise", url: "https://wise.com", desc: "Международные переводы", category: "finance" },
+  { name: "Skyscanner", url: "https://www.skyscanner.ru", desc: "Поиск авиабилетов", category: "travel" }
 ];
 
 if (typeof module !== 'undefined') module.exports = { COUNTRIES, TELEGRAM_CHANNELS, WEB_RESOURCES };

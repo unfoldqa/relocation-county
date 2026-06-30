@@ -6,15 +6,15 @@ const QUIZZES = {
     desc: '12 вопросов о вашем образе жизни, бюджете и приоритетах',
     questions: [
       { q: 'Какой у вас ежемесячный бюджет на жизнь?', options: [
-        { text: 'До $1 000', scores: { kyrgyzstan: 3, uzbekistan: 3, argentina: 2, bali: 2 } },
-        { text: '$1 000 – $1 800', scores: { georgia: 3, armenia: 3, kazakhstan: 2, thailand: 2, mexico: 2 } },
+        { text: 'До $1 000', scores: { kyrgyzstan: 3, uzbekistan: 3, vietnam: 3, argentina: 2, bali: 2 } },
+        { text: '$1 000 – $1 800', scores: { georgia: 3, armenia: 3, vietnam: 2, kazakhstan: 2, thailand: 2, mexico: 2 } },
         { text: '$1 800 – $2 800', scores: { serbia: 3, portugal: 2, spain: 2, turkey: 2, czech: 2 } },
         { text: 'Более $3 000', scores: { uae: 3, germany: 2, canada: 2, cyprus: 2, malta: 2 } }
       ]},
       { q: 'Что для вас важнее всего?', options: [
         { text: 'Минимум бюрократии', scores: { georgia: 3, armenia: 3, kyrgyzstan: 2, bali: 2 } },
         { text: 'Европа и Шенген', scores: { portugal: 3, spain: 3, czech: 2, estonia: 2, poland: 2 } },
-        { text: 'Тёплый климат и море', scores: { thailand: 3, bali: 3, cyprus: 2, turkey: 2, mexico: 2 } },
+        { text: 'Тёплый климат и море', scores: { thailand: 3, vietnam: 3, bali: 3, cyprus: 2, turkey: 2, mexico: 2 } },
         { text: 'Нулевые налоги', scores: { uae: 3, georgia: 2, cyprus: 2, thailand: 2 } }
       ]},
       { q: 'Ваш уровень английского?', options: [
@@ -270,7 +270,7 @@ const QUIZZES = {
     desc: 'Определите идеальный тип места для жизни',
     questions: [
       { q: 'Где хотите просыпаться?', options: [
-        { text: 'У моря', vibe: 'coastal', scores: { thailand: 2, bali: 2, cyprus: 2, montenegro: 2 } },
+        { text: 'У моря', vibe: 'coastal', scores: { thailand: 2, vietnam: 3, bali: 2, cyprus: 2, montenegro: 2 } },
         { text: 'В большом городе', vibe: 'urban', scores: { uae: 2, germany: 2, spain: 2, georgia: 1 } },
         { text: 'В горах', vibe: 'mountain', scores: { georgia: 2, armenia: 2, montenegro: 1 } },
         { text: 'В маленьком уютном городе', vibe: 'smalltown', scores: { portugal: 2, latvia: 2, czech: 1 } }
@@ -283,7 +283,7 @@ const QUIZZES = {
       ]},
       { q: 'Ваш стиль питания?', options: [
         { text: 'Средиземноморская кухня', scores: { portugal: 2, spain: 2, cyprus: 2, turkey: 1 } },
-        { text: 'Азиатская', scores: { thailand: 3, bali: 2 } },
+        { text: 'Азиатская', scores: { thailand: 3, vietnam: 3, bali: 2 } },
         { text: 'Кавказская / домашняя', scores: { georgia: 3, armenia: 2 } },
         { text: 'Всё глобальное', scores: { uae: 2, canada: 2, germany: 1 } }
       ]},

@@ -75,6 +75,7 @@ const CountriesPage = {
     if (!chips) return;
     const presets = [
       { label: '⭐ Топ рейтинг', sort: 'rating' },
+      { label: '🇻🇳 Вьетнам', region: 'Юго-Восточная Азия' },
       { label: '💰 Бюджетные', budget: '1500' },
       { label: '🌴 Для номадов', nomad: 'nomad' },
       { label: '🇪🇺 Путь в ЕС', eu: 'eu' },
@@ -213,8 +214,13 @@ const CountriesPage = {
       </div>
       <h4 style="margin:16px 0 8px">Пути переезда</h4>
       <div class="country-tags">${c.pathways.map(p => `<span class="tag">${p}</span>`).join('')}</div>
-      <h4 style="margin:16px 0 8px">Telegram-каналы</h4>
-      <div class="country-tags">${c.channels.map(ch => `<span class="tag accent">${ch}</span>`).join('')}</div>
+      <h4 style="margin:16px 0 8px">Официальные сайты</h4>
+      <div class="country-tags">${c.sites.map(s => `<a href="https://${s}" target="_blank" rel="noopener" class="tag accent" style="text-decoration:none">${s}</a>`).join('')}</div>
+      ${c.sources ? `<h4 style="margin:16px 0 8px">Источники данных</h4>
+      <ul style="font-size:0.82rem;color:var(--text-muted);padding-left:18px;line-height:1.8">
+        ${c.sources.map(s => `<li>${s.startsWith('http') ? `<a href="${s}" target="_blank" rel="noopener" style="color:var(--accent)">${s.replace('https://','')}</a>` : s}</li>`).join('')}
+      </ul>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px">Данные актуальны на ${DATA_META.verifiedAsOf}. Проверяйте правила перед поездкой.</p>` : ''}
       <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap">
         <a href="compare.html?a=${c.id}" class="btn btn-primary btn-sm">Сравнить</a>
         <a href="calculator.html?country=${c.id}" class="btn btn-secondary btn-sm">Калькулятор</a>
