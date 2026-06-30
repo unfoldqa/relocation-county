@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/app.css?v=1">
+  <link rel="stylesheet" href="assets/app.css?v=2">
 </head>
 <body>
   <div class="bg-accent"><div class="shape s1"></div><div class="shape s2"></div></div>
@@ -31,80 +31,50 @@
     <section class="section-header">
       <span class="section-tag">Финансы</span>
       <h1>Калькулятор бюджета</h1>
-      <p class="lead">Рассчитайте стоимость жизни и переезда. Настройте уровень комфорта и сравните с другими странами.</p>
+      <p class="lead">Выберите конкретные параметры жизни — калькулятор посчитает расходы по категориям и стоимость переезда.</p>
     </section>
 
     <div class="calc-grid">
-      <div class="card calc-inputs">
-        <div class="calc-field">
-          <label>Страна</label>
-          <select id="calcCountry"></select>
-        </div>
-        <div class="calc-field">
-          <label>Количество человек</label>
-          <input type="number" id="calcPeople" value="1" min="1" max="6">
-        </div>
-        <div class="calc-field">
-          <label>Месяцев планирования</label>
-          <input type="number" id="calcMonths" value="6" min="1" max="24">
-        </div>
-        <div class="calc-field">
-          <label>Жильё</label>
-          <input type="range" id="calcRent" min="20" max="100" value="50">
-          <div class="range-val" id="calcRentVal">Средний</div>
-        </div>
-        <div class="calc-field">
-          <label>Питание</label>
-          <input type="range" id="calcFood" min="20" max="100" value="50">
-          <div class="range-val" id="calcFoodVal">Средний</div>
-        </div>
-        <div class="calc-field">
-          <label>Транспорт</label>
-          <input type="range" id="calcTransport" min="20" max="100" value="50">
-          <div class="range-val" id="calcTransportVal">Средний</div>
-        </div>
-        <div class="calc-field">
-          <label>Медицина</label>
-          <input type="range" id="calcHealth" min="20" max="100" value="50">
-          <div class="range-val" id="calcHealthVal">Средний</div>
-        </div>
-        <div class="calc-field">
-          <label>Прочее</label>
-          <input type="range" id="calcOther" min="20" max="100" value="50">
-          <div class="range-val" id="calcOtherVal">Средний</div>
-        </div>
-      </div>
+      <div class="card calc-inputs" id="calcForm"></div>
 
-      <div class="card calc-results">
+      <div class="card calc-results" style="position:sticky;top:84px;align-self:start">
         <h3>Ежемесячные расходы</h3>
         <div class="result-big" id="resMonthly">—</div>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px">≈ <span id="resPerDay">—</span> в день</p>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px">≈ <span id="resPerDay">—</span> в день · <span id="resPerPerson">—</span> на человека</p>
 
         <div class="result-breakdown">
           <div class="breakdown-row"><span>🏠 Жильё</span><span id="resRent">—</span></div>
           <div class="breakdown-row"><span>🍽 Питание</span><span id="resFood">—</span></div>
           <div class="breakdown-row"><span>🚗 Транспорт</span><span id="resTransport">—</span></div>
           <div class="breakdown-row"><span>🏥 Медицина</span><span id="resHealth">—</span></div>
-          <div class="breakdown-row"><span>📦 Прочее</span><span id="resOther">—</span></div>
+          <div class="breakdown-row"><span>📦 Быт и досуг</span><span id="resOther">—</span></div>
+          <div class="breakdown-row" id="resCoworkingRow" style="display:none"><span>💻 Коворкинг</span><span id="resCoworking">—</span></div>
+          <div class="breakdown-row" id="resChildRow" style="display:none"><span>👶 Дети (сад/школа)</span><span id="resChild">—</span></div>
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0">
 
-        <h3 style="font-size:1rem">Стоимость переезда</h3>
-        <div style="font-size:1.5rem;font-weight:700;color:var(--gold);margin:8px 0" id="resRelocation">—</div>
-        <p style="font-size:0.82rem;color:var(--text-muted)">Билеты, депозит, первый месяц, документы</p>
+        <h3 style="font-size:1rem">Разовые расходы на переезд</h3>
+        <div class="result-breakdown" style="margin-bottom:12px">
+          <div class="breakdown-row"><span>✈️ Перелёт</span><span id="resFlight">—</span></div>
+          <div class="breakdown-row"><span>🛂 Виза и документы</span><span id="resVisa">—</span></div>
+          <div class="breakdown-row"><span>🏠 Депозит за жильё</span><span id="resDeposit">—</span></div>
+          <div class="breakdown-row"><span>🛋 Обустройство</span><span id="resSetup">—</span></div>
+        </div>
+        <div style="font-size:1.35rem;font-weight:700;color:var(--gold);margin:8px 0" id="resRelocation">—</div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0">
 
-        <h3 style="font-size:1rem">Итого за период</h3>
+        <h3 style="font-size:1rem">Итого за <span id="resMonthsLabel">6</span> мес.</h3>
         <div class="result-big" id="resTotal">—</div>
+        <p class="calc-hint" id="resCushion"></p>
       </div>
     </div>
 
     <div class="card" style="padding:24px;margin-top:24px" id="calcComparison"></div>
   </main>
 
-  <footer class="site-footer"><p>Relocation Guide · Расчёты приблизительные, основаны на данных Numbeo и экспат-сообществ</p></footer>
+  <footer class="site-footer"><p>Relocation Guide · Оценки на основе базового бюджета страны и типичных цен экспатов</p></footer>
 
   <script src="assets/countries.js"></script>
   <script src="assets/app.js"></script>
