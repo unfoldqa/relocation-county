@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ресурсы — Relocation Guide</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css?v=1">
+</head>
+<body>
+  <div class="bg-accent"><div class="shape s1"></div><div class="shape s2"></div></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/favicon.svg" alt="" class="logo-icon" width="32" height="32">Relocation <span>Guide</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+        <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+      </nav>
+      <button class="mobile-nav-btn" aria-label="Меню">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-menu">
+    <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+    <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+  </nav>
+
+  <main class="container">
+    <section class="section-header">
+      <span class="section-tag">Curated</span>
+      <h1>Ресурсы для релокантов</h1>
+      <p class="lead">Telegram-каналы и сайты, собранные из экспат-сообществ. Основной источник актуальной информации о переезде.</p>
+    </section>
+
+    <div class="filter-chips" id="resourceChips">
+      <button class="chip active" data-cat="all">Все</button>
+      <button class="chip" data-cat="country">По странам</button>
+      <button class="chip" data-cat="general">Общие</button>
+      <button class="chip" data-cat="nomad">Номады</button>
+      <button class="chip" data-cat="legal">Визы и налоги</button>
+      <button class="chip" data-cat="career">Карьера</button>
+      <button class="chip" data-cat="mental">Психология</button>
+      <button class="chip" data-cat="family">Семья</button>
+      <button class="chip" data-cat="finance">Финансы</button>
+      <button class="chip" data-cat="community">Сообщества</button>
+    </div>
+
+    <section style="margin-bottom:48px">
+      <h2 style="margin-bottom:20px">📱 Telegram-каналы</h2>
+      <div class="resource-list" id="telegramList"></div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom:20px">🌐 Полезные сайты</h2>
+      <div class="resource-list" id="webList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>Relocation Guide · Каналы носят справочный характер</p></footer>
+
+  <script src="assets/countries.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let activeCat = 'all';
+
+      function renderTelegram() {
+        const list = document.getElementById('telegramList');
+        const filtered = activeCat === 'all' ? TELEGRAM_CHANNELS : TELEGRAM_CHANNELS.filter(c => c.category === activeCat);
+        list.innerHTML = filtered.map(ch => `
+          <a class="resource-item" href="https://t.me/${ch.handle.replace('@', '')}" target="_blank" rel="noopener">
+            <span class="res-icon">📱</span>
+            <div class="res-info">
+              <div class="res-name">${ch.name}</div>
+              <div class="res-desc">${ch.desc}</div>
+            </div>
+            <span class="res-handle">${ch.handle}</span>
+          </a>`).join('');
+      }
+
+      function renderWeb() {
+        const list = document.getElementById('webList');
+        const filtered = activeCat === 'all' ? WEB_RESOURCES : WEB_RESOURCES.filter(r => r.category === activeCat);
+        list.innerHTML = filtered.map(r => `
+          <a class="resource-item" href="${r.url}" target="_blank" rel="noopener">
+            <span class="res-icon">🌐</span>
+            <div class="res-info">
+              <div class="res-name">${r.name}</div>
+              <div class="res-desc">${r.desc}</div>
+            </div>
+          </a>`).join('');
+      }
+
+      document.querySelectorAll('#resourceChips .chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('#resourceChips .chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          activeCat = chip.dataset.cat;
+          renderTelegram();
+          renderWeb();
+        });
+      });
+
+      renderTelegram();
+      renderWeb();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сравнение — Relocation Guide</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css?v=1">
+</head>
+<body>
+  <div class="bg-accent"><div class="shape s1"></div><div class="shape s2"></div></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/favicon.svg" alt="" class="logo-icon" width="32" height="32">Relocation <span>Guide</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+        <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+      </nav>
+      <button class="mobile-nav-btn" aria-label="Меню">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-menu">
+    <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+    <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+  </nav>
+
+  <main class="container">
+    <section class="section-header">
+      <span class="section-tag">Аналитика</span>
+      <h1>Сравнение стран</h1>
+      <p class="lead">Выберите до 3 стран — увидите детальное сравнение по 18 параметрам. Лучшие значения подсвечиваются.</p>
+    </section>
+
+    <div class="compare-selectors">
+      <div class="filter-group"><label>Страна 1</label><select id="compareA"></select></div>
+      <div class="filter-group"><label>Страна 2</label><select id="compareB"></select></div>
+      <div class="filter-group"><label>Страна 3</label><select id="compareC"></select></div>
+    </div>
+
+    <div id="compareTable"></div>
+  </main>
+
+  <footer class="site-footer"><p>Relocation Guide</p></footer>
+
+  <script src="assets/countries.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/compare.js"></script>
+</body>
+</html>

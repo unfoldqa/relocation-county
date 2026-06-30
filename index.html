@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relocation Guide — Переезд из России</title>
+  <meta name="description" content="Платформа для переезда из России: каталог стран, тесты, рейтинги, калькулятор бюджета, roadmap и ресурсы.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css?v=1">
+</head>
+<body>
+  <div class="bg-accent"><div class="shape s1"></div><div class="shape s2"></div></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" width="32" height="32">
+        Relocation <span>Guide</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="countries.html">Страны</a>
+        <a href="tests.html">Тесты</a>
+        <a href="compare.html">Сравнение</a>
+        <a href="calculator.html">Калькулятор</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="resources.html">Ресурсы</a>
+      </nav>
+      <button class="mobile-nav-btn" aria-label="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu">
+    <a href="index.html">Главная</a>
+    <a href="countries.html">Страны</a>
+    <a href="tests.html">Тесты</a>
+    <a href="compare.html">Сравнение</a>
+    <a href="calculator.html">Калькулятор</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="resources.html">Ресурсы</a>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <span class="section-tag">25+ стран · Актуально 2025–2026</span>
+      <div class="globe-container">
+        <div class="globe"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+      </div>
+      <h1>Новая жизнь<br>начинается здесь</h1>
+      <p class="lead">Платформа для тех, кто переезжает из России. Каталог стран с рейтингами, интерактивные тесты, калькулятор бюджета, персональный roadmap и curated-ресурсы из Telegram и экспат-сообществ.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-value">25</div><div class="stat-label">стран</div></div>
+        <div class="stat"><div class="stat-value">5</div><div class="stat-label">тестов</div></div>
+        <div class="stat"><div class="stat-value">8</div><div class="stat-label">критериев</div></div>
+        <div class="stat-value stat" id="readinessStat"><div class="stat-value" id="homeReadiness">—</div><div class="stat-label">готовность</div></div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="tests.html" class="btn btn-primary">🧪 Пройти тест подбора</a>
+        <a href="countries.html" class="btn btn-secondary">🌍 Каталог стран</a>
+      </div>
+    </section>
+
+    <section class="dashboard-grid" id="dashboard">
+      <div class="card widget">
+        <h3>📊 Готовность к переезду</h3>
+        <div class="readiness-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" id="readinessRing" cx="60" cy="60" r="52"
+              stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="readiness-value" id="readinessValue">—</div>
+        </div>
+        <p style="text-align:center;font-size:0.85rem;color:var(--text-muted)">
+          <a href="tests.html" style="color:var(--accent)">Пройдите тест готовности →</a>
+        </p>
+      </div>
+
+      <div class="card widget">
+        <h3>⭐ Избранные страны</h3>
+        <div id="favoritesList" style="font-size:0.9rem;color:var(--text-secondary)">Пока пусто</div>
+      </div>
+
+      <div class="card widget">
+        <h3>🏆 Достижения</h3>
+        <div class="achievements">
+          <div class="achievement" data-achievement="first_quiz"><span class="ach-icon">🧪</span> Первый тест</div>
+          <div class="achievement" data-achievement="quiz_master"><span class="ach-icon">🏆</span> 5 тестов</div>
+          <div class="achievement" data-achievement="first_favorite"><span class="ach-icon">⭐</span> Избранное</div>
+          <div class="achievement" data-achievement="explorer"><span class="ach-icon">🌍</span> 5 стран</div>
+          <div class="achievement" data-achievement="roadmap_start"><span class="ach-icon">🗺️</span> Roadmap</div>
+          <div class="achievement" data-achievement="roadmap_half"><span class="ach-icon">🚀</span> Полпути</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:56px">
+      <div class="section-header">
+        <span class="section-tag">Возможности</span>
+        <h2>Всё для вашего переезда</h2>
+      </div>
+      <div class="card-grid">
+        <a href="countries.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <span class="badge">Популярное</span>
+          <div class="icon">🌍</div>
+          <h3>Каталог стран</h3>
+          <p>25 стран с плюсами, минусами, рейтингами по 8 критериям и фильтрацией по бюджету, визе, климату.</p>
+        </a>
+        <a href="tests.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <span class="badge">Wow</span>
+          <div class="icon">🧪</div>
+          <h3>5 интерактивных тестов</h3>
+          <p>Подбор страны, барьеры, готовность, «почему не могу», стиль жизни — с персональными результатами.</p>
+        </a>
+        <a href="compare.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <div class="icon">⚖️</div>
+          <h3>Сравнение стран</h3>
+          <p>До 3 стран side-by-side: визы, налоги, медицина, бюджет. Победитель подсвечивается.</p>
+        </a>
+        <a href="calculator.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <div class="icon">💰</div>
+          <h3>Калькулятор бюджета</h3>
+          <p>Расчёт расходов на переезд и жизнь с настройкой уровня комфорта. Сравнение с другими странами.</p>
+        </a>
+        <a href="roadmap.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <div class="icon">🗺️</div>
+          <h3>Персональный Roadmap</h3>
+          <p>12 шагов от исследования до адаптации. Отмечайте прогресс, получайте достижения.</p>
+        </a>
+        <a href="resources.html" class="card feature-card card-hover" style="text-decoration:none;color:inherit">
+          <div class="icon">📡</div>
+          <h3>Telegram и сайты</h3>
+          <p>20+ Telegram-каналов и полезных ресурсов для релокантов — curated из экспат-сообществ.</p>
+        </a>
+      </div>
+    </section>
+
+    <section style="margin-bottom:56px">
+      <div class="section-header">
+        <span class="section-tag">Топ-5</span>
+        <h2>Рейтинг стран для переезда</h2>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" id="topRanking"></div>
+    </section>
+
+    <section>
+      <div class="card" style="padding:32px;text-align:center">
+        <h2 style="margin-bottom:12px">Не знаете с чего начать?</h2>
+        <p style="color:var(--text-secondary);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto">Пройдите тест подбора страны — 12 вопросов, и мы покажем ваши идеальные направления с confetti-финалом 🎉</p>
+        <a href="tests.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Начать тест →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Relocation Guide · unfoldqa.github.io/relocation-county · Данные носят информационный характер</p>
+  </footer>
+
+  <script src="assets/countries.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const score = App.data.readinessScore;
+      const ring = document.getElementById('readinessRing');
+      const val = document.getElementById('readinessValue');
+      const homeVal = document.getElementById('homeReadiness');
+      if (score !== null) {
+        const offset = 326.7 - (326.7 * score / 100);
+        if (ring) ring.style.strokeDashoffset = offset;
+        if (val) val.textContent = score + '%';
+        if (homeVal) homeVal.textContent = score + '%';
+      } else {
+        if (val) val.textContent = '?';
+        if (homeVal) homeVal.textContent = '?';
+      }
+
+      const favList = document.getElementById('favoritesList');
+      if (favList) {
+        if (App.data.favorites.length) {
+          favList.innerHTML = App.data.favorites.map(id => {
+            const c = App.getCountryById(id);
+            return c ? `<a href="countries.html#${id}" style="display:block;padding:6px 0;color:var(--accent);text-decoration:none">${c.flag} ${c.name}</a>` : '';
+          }).join('');
+        }
+      }
+
+      const top = [...COUNTRIES].sort((a, b) => App.avgRating(b) - App.avgRating(a)).slice(0, 5);
+      const medals = ['🥇', '🥈', '🥉', '4', '5'];
+      document.getElementById('topRanking').innerHTML = `
+        <table class="ranking-table">
+          <thead><tr><th>#</th><th>Страна</th><th>Рейтинг</th><th>Бюджет</th><th>Виза</th><th></th></tr></thead>
+          <tbody>${top.map((c, i) => `
+            <tr>
+              <td class="rank-num">${medals[i]}</td>
+              <td>${c.flag} <strong>${c.name}</strong></td>
+              <td style="color:var(--accent);font-weight:700">${App.avgRating(c)}</td>
+              <td>$${c.budget}/мес</td>
+              <td style="font-size:0.82rem;color:var(--text-muted)">${c.visa}</td>
+              <td><a href="countries.html#${c.id}" class="btn btn-secondary btn-sm">→</a></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>`;
+    });
+  </script>
+</body>
+</html>

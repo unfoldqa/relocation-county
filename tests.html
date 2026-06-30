@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тесты — Relocation Guide</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css?v=1">
+</head>
+<body>
+  <div class="bg-accent"><div class="shape s1"></div><div class="shape s2"></div></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/favicon.svg" alt="" class="logo-icon" width="32" height="32">Relocation <span>Guide</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+        <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+      </nav>
+      <button class="mobile-nav-btn" aria-label="Меню">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-menu">
+    <a href="index.html">Главная</a><a href="countries.html">Страны</a><a href="tests.html">Тесты</a>
+    <a href="compare.html">Сравнение</a><a href="calculator.html">Калькулятор</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Ресурсы</a>
+  </nav>
+
+  <main class="container">
+    <section class="section-header" style="text-align:center">
+      <span class="section-tag">Интерактив</span>
+      <h1>Тесты и опросники</h1>
+      <p class="lead" id="quizDesc" style="margin:0 auto">Выберите тест и получите персональные рекомендации</p>
+    </section>
+
+    <div class="quiz-tabs" id="quizTabs" style="justify-content:center"></div>
+
+    <div class="card quiz-container" style="padding:32px;margin-top:8px">
+      <div id="quizArea"></div>
+    </div>
+
+    <section style="margin-top:48px">
+      <div class="card-grid">
+        <div class="card" style="padding:24px">
+          <h3>🌍 Подбор страны</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">12 вопросов о бюджете, климате, работе и приоритетах → топ-3 страны.</p>
+        </div>
+        <div class="card" style="padding:24px">
+          <h3>🚧 Что мешает?</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">Выявите барьеры и получите конкретный план их преодоления.</p>
+        </div>
+        <div class="card" style="padding:24px">
+          <h3>📊 Готовность</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">10 параметров подготовки → процент готовности с confetti.</p>
+        </div>
+        <div class="card" style="padding:24px">
+          <h3>🔍 Почему не могу?</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">Отделяем реальные препятствия от отговорок. Честный тест.</p>
+        </div>
+        <div class="card" style="padding:24px">
+          <h3>🏡 Стиль жизни</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">Море, горы, мегаполис — найдите страну под ваш vibe.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>Relocation Guide · Результаты сохраняются локально в браузере</p></footer>
+
+  <script src="assets/countries.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/quizzes.js"></script>
+</body>
+</html>
